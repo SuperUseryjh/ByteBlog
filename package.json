@@ -1,0 +1,14 @@
+{
+  "name": "blog-root",
+  "version": "1.0.0",
+  "description": "Root package for the blog framework",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm run build --prefix frontend",
+    "start:backend": "node backend/server.js",
+    "start:frontend": "npm run serve --prefix frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
