@@ -26,8 +26,8 @@ module.exports = {
 
         // Override an existing frontend page (e.g., HomePage)
         registerFrontendPage({
-            path: '/', // The path of the page to override (can be anything, but name is key)
-            name: 'OverriddenHomePage', // A unique name for the overridden component
+            path: '/home-plugin', // The path of the page to override (can be anything, but name is key)
+            name: 'OverriddenHomePage(moved)', // A unique name for the overridden component
             componentTemplate: `<div><h1>Hello from Plugin-Overridden Home Page!</h1><p>This content is from a plugin.</p></div>`,
             componentScript: `export default { name: 'OverriddenHomePageComponent' }`,
             requiresAuth: false,

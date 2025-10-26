@@ -191,6 +191,12 @@ const loadPlugins = (app, db) => {
 
             if (fs.existsSync(pluginEntryFile) && fs.existsSync(pluginPackageJson)) {
                 try {
+                    const packageJsonContent = JSON.parse(fs.readFileSync(pluginPackageJson, 'utf8'));
+                    if (packageJsonContent.enable === false) {
+                        console.log(`Plugin '${dirent.name}' is disabled by package.json.`);
+                        return; // Skip loading this plugin
+                    }
+
                     const plugin = require(pluginEntryFile);
                     if (typeof plugin.init === 'function') {
                         plugin.init(app, db, registerFrontendPage); // Pass registerFrontendPage
